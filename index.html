@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Nyx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">    
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        elysium: {
+                            purple: '#6A00FF',
+                            crimson: '#C3003C',
+                            bg: '#0B0B12',
+                            surface: '#12121A',
+                            border: '#2A2A3A',
+                            textSecondary: '#B3B3C6',
+                            muted: '#7A7A90'
+                        }
+                    },
+                    backgroundImage: {
+                        'elysium-gradient': 'linear-gradient(135deg, #6A00FF 0%, #C3003C 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0B12; color: #FFFFFF; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .elysium-glow { box-shadow: 0 0 50px rgba(106, 0, 255, 0.15); }
+        .text-gradient { background: linear-gradient(135deg, #6A00FF 0%, #C3003C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .avatar-glow { box-shadow: 0 0 30px rgba(106, 0, 255, 0.4); }
+        .age-badge { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: help; }
+        .age-badge:hover { border-color: #6A00FF; background: rgba(106, 0, 255, 0.1); }
+        .age-badge #age-display { transition: opacity 0.2s ease; }
+        .sanctuary-node { transition: all 0.4s ease; border: 1px solid #2A2A3A; }
+        .sanctuary-node:hover { transform: translateY(-5px); border-color: #6A00FF; background: rgba(106, 0, 255, 0.05); }
+
+        .nav-item { transition: all 0.3s ease; color: #7A7A90; }
+        .nav-item:hover { color: #FFFFFF; background: rgba(106, 0, 255, 0.1); }
+
+        #back-to-top {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #back-to-top.visible {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-elysium-purple/40">
+
+    <nav class="md:hidden fixed bottom-0 left-0 w-full h-16 bg-elysium-surface/80 backdrop-blur-xl border-t border-elysium-border z-50 flex items-center justify-around">
+        <a href="#home" class="nav-item p-3 rounded-xl flex items-center justify-center" title="Home">
+            <i data-lucide="home" class="w-6 h-6"></i>
+        </a>
+        <a href="#bio" class="nav-item p-3 rounded-xl flex items-center justify-center" title="Bio">
+            <i data-lucide="user" class="w-6 h-6"></i>
+        </a>
+        <a href="#communities" class="nav-item p-3 rounded-xl flex items-center justify-center" title="Communities">
+            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+        </a>
+        <a href="#links" class="nav-item p-3 rounded-xl flex items-center justify-center" title="Links">
+            <i data-lucide="link" class="w-6 h-6"></i>
+        </a>
+    </nav>
+
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+        class="hidden md:flex fixed bottom-8 right-8 w-12 h-12 rounded-full bg-elysium-surface border border-elysium-border items-center justify-center z-50 hover:border-elysium-purple hover:bg-elysium-gradient group transition-all duration-300 shadow-2xl">
+        <i data-lucide="chevron-up" class="w-6 h-6 text-elysium-muted group-hover:text-white"></i>
+    </button>
+
+    <main class="max-w-4xl mx-auto px-6 pt-24 pb-24">
+
+        <section id="home" class="grid md:grid-cols-12 gap-12 items-center mb-24 scroll-mt-32">
+            <div class="md:col-span-4 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1.5 bg-elysium-gradient rounded-full blur opacity-40 group-hover:opacity-75 transition duration-1000"></div>
+                    <div class="relative w-48 h-48 rounded-full bg-elysium-surface border-2 border-elysium-border overflow-hidden avatar-glow">
+                        <img src="https://cdn.discordapp.com/avatars/1364172841188331602/fe839e08f0f6d170259057f15c9219c3.webp" 
+                             alt="Nyx" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-8 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                    <div class="px-3 py-1 rounded-md bg-elysium-purple/10 border border-elysium-purple/20 text-[10px] font-bold tracking-[0.3em] text-elysium-purple uppercase">Certified Femboy</div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-elysium-muted uppercase italic">AKA: Nyxious // Nydity</div>
+                </div>
+
+                <h1 class="text-7xl font-bold tracking-tighter mb-4">Nyx</h1>
+
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+                    <span id="age-badge" class="age-badge px-3 py-1 rounded-md bg-elysium-surface border border-elysium-border text-[10px] font-bold uppercase tracking-widest text-white">
+                        <span id="age-display">Age: --</span>
+                    </span>
+                    <span class="px-3 py-1 rounded-md bg-elysium-surface border border-elysium-border text-[10px] font-bold uppercase tracking-widest text-white">Sex: Male</span>
+                    <span class="px-3 py-1 rounded-md bg-elysium-surface border border-elysium-border text-[10px] font-bold uppercase tracking-widest text-white">Nationality: Australian</span>
+                    <span class="px-3 py-1 rounded-md bg-elysium-surface border border-elysium-border text-[10px] font-bold uppercase tracking-widest text-white">Sexuality: Bisexual</span>
+                    <span class="px-3 py-1 rounded-md bg-elysium-surface border border-elysium-border text-[10px] font-bold uppercase tracking-widest text-white">Pronouns: Any</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="bio" class="grid md:grid-cols-1 gap-8 mb-24 scroll-mt-32">
+            <div class="p-8 md:p-12 rounded-[28px] bg-elysium-surface border border-elysium-border relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-[0.03]">
+                    <i data-lucide="quote" class="w-32 h-32"></i>
+                </div>
+
+                <h2 class="text-[10px] uppercase tracking-[0.4em] font-bold text-elysium-purple mb-8">Bio</h2>
+
+                <div class="space-y-6 max-w-3xl">
+                    <p class="text-xl text-white leading-relaxed font-light">
+                        Amateur coder and community builder. I enjoy creating projects and communities - I want to make something in my life and leave this world with a lot to my name.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-8 pt-6 border-t border-elysium-border/50">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-elysium-crimson mb-3">When Interacting With Me:</h4>
+                            <p class="text-sm text-elysium-textSecondary leading-relaxed">
+                                <span class="text-white font-medium">"Don't ask just to ask."</span> If you ask me a question, please be specific - It annoys me otherwise.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-elysium-crimson mb-3">FAQ:</h4>
+                            <p class="text-sm text-elysium-textSecondary leading-relaxed">
+                                <span class="text-white font-medium">"Frequently Asked Questions"</span> Currently nothing here!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="communities" class="mb-24 scroll-mt-32">
+            <div class="mb-12 text-center md:text-left">
+                <h2 class="text-[10px] uppercase tracking-[0.5em] font-bold text-elysium-purple mb-2">My Communities</h2>
+                <h3 class="text-4xl font-bold tracking-tight italic">Softboy Sanctuary</h3>
+            </div>
+
+            <div class="p-10 rounded-[28px] bg-elysium-surface border border-elysium-border relative overflow-hidden elysium-glow mb-6">
+                <div class="absolute -top-10 -right-10 opacity-5">
+                    <i data-lucide="palmtree" class="w-64 h-64 text-white"></i>
+                </div>
+                <div class="relative z-10">
+                    <p class="text-lg text-elysium-textSecondary leading-relaxed max-w-2xl mb-8">
+                        Community-focused NSFW/18+ communities, primarily for femboys and LGBT+ to hangout! And, be themselves.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://discord.gg/FrD9gBvamq" class="sanctuary-node p-6 rounded-[24px] bg-elysium-surface flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-elysium-purple/10 flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-elysium-purple"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold">Discord</div>
+                            <div class="text-[10px] uppercase tracking-widest text-elysium-muted">Join the Discord!</div>
+                        </div>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-elysium-muted group-hover:text-white transition-colors"></i>
+                </a>
+
+                <a href="https://www.reddit.com/r/softboysanctuary/" class="sanctuary-node p-6 rounded-[24px] bg-elysium-surface flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-elysium-crimson/10 flex items-center justify-center">
+                            <i data-lucide="users" class="w-6 h-6 text-elysium-crimson"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold">Subreddit</div>
+                            <div class="text-[10px] uppercase tracking-widest text-elysium-muted">Join the subreddit!</div>
+                        </div>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-elysium-muted group-hover:text-white transition-colors"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="links" class="scroll-mt-32">
+            <h2 class="text-[10px] uppercase tracking-[0.4em] font-bold text-elysium-muted mb-8 text-center">My Links</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="https://discord.gg/FrD9gBvamq" class="p-6 rounded-[20px] bg-elysium-surface border border-elysium-border flex items-center gap-4 hover:border-elysium-purple transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-elysium-purple/20">
+                        <i data-lucide="message-square" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-tighter text-elysium-muted">Discord</div>
+                        <div class="text-sm font-bold">nydity</div>
+                    </div>
+                </a>
+                <a href="https://x.com/notnydity" class="p-6 rounded-[20px] bg-elysium-surface border border-elysium-border flex items-center gap-4 hover:border-elysium-purple transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-elysium-purple/20">
+                        <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-tighter text-elysium-muted">Twitter (x)</div>
+                        <div class="text-sm font-bold">@notnydity</div>
+                    </div>
+                </a>
+                <a href="https://nydity-shop.fourthwall.com/" class="p-6 rounded-[20px] bg-elysium-surface border border-elysium-border flex items-center gap-4 hover:border-elysium-purple transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-elysium-purple/20">
+                        <i data-lucide="hand-coins" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-bold uppercase tracking-tighter text-elysium-muted">Support Me</div>
+                        <div class="text-sm font-bold">My Store</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-24 pb-20 md:pb-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="pt-12 border-t border-elysium-border/30 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex flex-col items-center md:items-start">
+                    <p class="text-[10px] text-elysium-muted uppercase tracking-[0.2em]">Designed by <span class="text-white">Nyx</span> &copy; 2025</p>
+                </div>
+                <a href="https://github.com/Nydity/my-profile" target="_blank" class="flex items-center gap-3 px-5 py-2.5 rounded-xl bg-white/5 border border-elysium-border hover:bg-white/10 hover:border-elysium-purple transition-all group">
+                    <i data-lucide="github" class="w-4 h-4 text-elysium-textSecondary group-hover:text-white transition-colors"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Source Code</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const birthDateStr = '2007-07-22';
+        const displayBirthDate = '22/07/2007';
+
+        function calculateAge(birthDateString) {
+            const birthDate = new Date(birthDateString);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        const age = calculateAge(birthDateStr);
+        const ageBadge = document.getElementById('age-badge');
+        const ageDisplay = document.getElementById('age-display');
+
+        ageDisplay.innerText = `Age: ${age}`;
+
+        ageBadge.addEventListener('mouseenter', () => {
+            ageDisplay.style.opacity = '0';
+            setTimeout(() => {
+                ageDisplay.innerText = displayBirthDate;
+                ageDisplay.style.opacity = '1';
+            }, 150);
+        });
+
+        ageBadge.addEventListener('mouseleave', () => {
+            ageDisplay.style.opacity = '0';
+            setTimeout(() => {
+                ageDisplay.innerText = `Age: ${age}`;
+                ageDisplay.style.opacity = '1';
+            }, 150);
+        });
+
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                btt.classList.add('visible');
+            } else {
+                btt.classList.remove('visible');
+            }
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
