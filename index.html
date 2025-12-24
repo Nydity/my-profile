@@ -7,6 +7,7 @@
 
     <meta name="title" content="Nyx | My Profile">
     <meta name="description" content="Amateur coder and community builder. Founder of Softboy Sanctuary.">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nydity.github.io/my-profile/"> <meta property="og:title" content="Nyx ✨">
     <meta property="og:description" content="My personal website about MEEE">
@@ -71,6 +72,29 @@
             opacity: 1;
             pointer-events: auto;
         }
+        ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0B0B12;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6A00FF 0%, #C3003C 100%);
+    border-radius: 10px;
+    border: 2px solid #0B0B12;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6A00FF;
+    box-shadow: 0 0 10px rgba(106, 0, 255, 0.5);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #6A00FF #0B0B12;
+}
     </style>
 </head>
 <body class="antialiased selection:bg-elysium-purple/40">
@@ -160,8 +184,8 @@
             </div>
         </section>
 
-        <section id="communities" class="mb-24 scroll-mt-32">
-            <div class="mb-12 text-center md:text-left">
+                <section id="communities" class="mb-32 scroll-mt-32">
+            <div class="mb-12">
                 <h2 class="text-[10px] uppercase tracking-[0.5em] font-bold text-elysium-purple mb-2">My Communities</h2>
                 <h3 class="text-4xl font-bold tracking-tight italic">Softboy Sanctuary</h3>
             </div>
@@ -170,39 +194,31 @@
                 <div class="absolute -top-10 -right-10 opacity-5">
                     <i data-lucide="palmtree" class="w-64 h-64 text-white"></i>
                 </div>
-                <div class="relative z-10">
-                    <p class="text-lg text-elysium-textSecondary leading-relaxed max-w-2xl mb-8">
-                        Community-focused NSFW/18+ communities, primarily for femboys and LGBT+ to hangout! And, be themselves.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="https://discord.gg/FrD9gBvamq" class="sanctuary-node p-6 rounded-[24px] bg-elysium-surface flex items-center justify-between group">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-elysium-purple/10 flex items-center justify-center">
-                            <i data-lucide="shield-check" class="w-6 h-6 text-elysium-purple"></i>
+                <p class="text-lg text-elysium-textSecondary leading-relaxed max-w-2xl mb-8 relative z-10">
+                    Community-focused NSFW/18+ communities, primarily for femboys and LGBT+ to hangout and be themselves.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://discord.gg/FrD9gBvamq" class="sanctuary-node p-6 rounded-[24px] bg-elysium-bg/50 flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="house" class="w-6 h-6 text-elysium-purple"></i>
+                            <div>
+                                <div class="text-sm font-bold">Discord</div>
+                                <div class="text-[10px] uppercase tracking-widest text-elysium-muted">Join the BEST Femboy NSFW server!</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-sm font-bold">Discord</div>
-                            <div class="text-[10px] uppercase tracking-widest text-elysium-muted">Join the Discord!</div>
-                        </div>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-elysium-muted group-hover:text-white transition-colors"></i>
-                </a>
-
-                <a href="https://www.reddit.com/r/softboysanctuary/" class="sanctuary-node p-6 rounded-[24px] bg-elysium-surface flex items-center justify-between group">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-elysium-crimson/10 flex items-center justify-center">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-elysium-muted group-hover:text-white transition-colors"></i>
+                    </a>
+                    <a href="https://www.reddit.com/r/softboysanctuary/" class="sanctuary-node p-6 rounded-[24px] bg-elysium-bg/50 flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
                             <i data-lucide="users" class="w-6 h-6 text-elysium-crimson"></i>
+                            <div>
+                                <div class="text-sm font-bold">Subreddit</div>
+                                <div class="text-[10px] uppercase tracking-widest text-elysium-muted">Reddit Community</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-sm font-bold">Subreddit</div>
-                            <div class="text-[10px] uppercase tracking-widest text-elysium-muted">Join the subreddit!</div>
-                        </div>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-elysium-muted group-hover:text-white transition-colors"></i>
-                </a>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-elysium-muted group-hover:text-white transition-colors"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -304,5 +320,4 @@
         lucide.createIcons();
     </script>
 </body>
-
 </html>
